@@ -1,0 +1,136 @@
+@import "variable";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: $g-bg;
+    height: 100vh;
+}
+.op-1{
+opacity: 1;
+}
+.lap-1{
+    position: relative;
+    left: -20px;
+}
+.lap-2{
+    position: relative;
+    left: -40px;
+}
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@mixin flex-box($justify){
+    display: flex;
+    justify-content: $justify;
+    flex-wrap: wrap;
+}
+
+nav{
+    @include flex-box(space-between);
+    background-color: $g-bg;
+    padding: 30px 0;
+    height: auto;
+    h3{
+        color: $white;
+        font-weight: 700;
+        font-size: 25px;
+        &::before{
+            content: "";
+            height: 25px;
+            margin-right: 10px;
+            bottom: -7px;
+            width: 25px;
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            border: 3px solid $white;
+        }
+    }
+    ul{
+        @include flex-box(space-around);
+        width: 30%;
+        li{
+            font-size: 16px;
+            color: $white;
+            margin-top: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            opacity: 0.3;
+            transition: 0.3s ease;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    button{
+        width: 150px;
+        height: 50px;
+        color: $g-bg;
+        background-color: $white;
+        font-weight: 600;
+        font-size: 17px;
+        cursor: pointer;
+        border: 0;
+    }
+}
+
+.banner{
+    @include flex-box(space-between);
+    .txt-banner{
+        width: 40%;
+        margin-top: 40px;
+        h1{
+            font-size: 62px;
+            color: $white;
+            padding-right: 20px;
+            text-shadow: $shadow;
+        }
+        p{
+            margin: 20px 0;
+            font-weight: 500;
+            font-size: 16px;
+            opacity: 0.5;
+            margin-bottom: 30px;
+            color: $white;
+        }
+        img{
+            width: 150px;
+            height: 45px;
+            margin-right: 10px;
+            border-radius: 7px;
+            border: 1px solid $white;
+        }
+        .people{
+            @include flex-box(space-around);
+            margin-top: 100px;
+            margin-right: 0;
+            width: 60%;
+            img{
+                height: 50px;
+                width: 50px;
+                margin-right: 0;
+                border-radius: 50%;
+                border: 3px solid $g-bg;
+            }
+            h4{
+                position: relative;
+                color: $white;
+                span{
+                    margin: 20px 0;
+                    font-weight: 500;
+                    font-size: 13px;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
